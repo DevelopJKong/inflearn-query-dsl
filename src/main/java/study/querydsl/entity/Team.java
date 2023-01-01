@@ -16,7 +16,7 @@ import java.util.List;
 @Entity
 @Setter
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED) // ! 생성자를 protected로 만들어서 외부에서 new로 생성하지 못하게 막는다.
+@NoArgsConstructor(access = AccessLevel.PROTECTED) // ! 생성자를 protected 로 만들어서 외부에서 new 로 생성하지 못하게 막는다.
 @ToString(of = { "id", "name" })
 public class Team {
     @Id
