@@ -94,31 +94,26 @@ public class QuerydslBasicTest {
 
     @Test
     public void resultFetch() {
+        //List
         List<Member> fetch = queryFactory
                 .selectFrom(member)
                 .fetch();
 
-        Member fetchOne = queryFactory
-                .selectFrom(member)
-                .fetchOne();
-
-        Member fetchFirst = queryFactory
+//        Member findMember1 = queryFactory
+//                .selectFrom(member)
+//                .fetchOne();
+        //처음 한 건 조회
+        Member findMember2 = queryFactory
                 .selectFrom(member)
                 .fetchFirst();
-
-        // ! 더 이상 지원하지 않는건가?
-        QueryResults<Member> memberQueryResults = queryFactory
+        //페이징에서 사용
+        QueryResults<Member> results = queryFactory
                 .selectFrom(member)
                 .fetchResults();
-
-        memberQueryResults.getTotal();
-        List<Member> content = memberQueryResults.getResults();
-
+        //count 쿼리로 변경
         long count = queryFactory
                 .selectFrom(member)
                 .fetchCount();
-
-
 
     }
 
